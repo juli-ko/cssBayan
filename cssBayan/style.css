@@ -1,0 +1,180 @@
+ * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-weight: 300;
+ }
+ *:after,
+ *:hover{
+    box-sizing: inherit;
+ }
+ 
+
+ html{
+    min-height: 100%;
+    height: auto;
+ }
+ body{
+    background: linear-gradient(180deg, rgba(195,34,148,1) 32%, rgba(233,162,81,1) 76%, rgba(228,196,128,1) 96%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+    font-size: 3vw;
+ }
+
+ .container{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Lilita One', cursive;  
+    color: #ffffff;
+    max-width: 90%;
+}
+.meme{
+    border-top: dotted #ffffff 0.1em ;
+    padding: 0.5rem 0;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1{
+    font-size: 5vw;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+.ico{
+    opacity: 0;
+}
+img{
+    max-width: 100% ;
+    padding-top: 0.5rem;
+}
+.picture{
+    max-width: 50vw;
+    width: 0;
+    display: flex;
+}
+
+input{
+    display: none;
+}
+.option{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.ico{
+    background-image: url(./assets/icons/plus-svgrepo-com.svg);
+    background-repeat: no-repeat;
+    background-size: 3vw;
+    width: 3vw;
+    height: 3vw;
+}
+@media (min-width: 390px){
+    body{
+        font-size: 2.5vw;
+    }
+    h1{
+        font-size: 4vw;
+    }
+    .ico{
+    background-size: 4vw;
+    width: 4vw;
+    height: 4vw;
+    }
+}
+
+@media (min-width: 880px){
+    body{
+        font-size: 2vw;
+    }
+    h1{
+        font-size: 3vw;
+    }
+    .ico{
+    background-size: 3vw;
+    width: 3vw;
+    height: 3vw;
+    }
+    .container{
+        max-width: 70%;
+    }
+}
+
+@media (min-width: 1420px) {
+    body {
+        font-size: 1.2vw;
+    }
+
+    h1 {
+        font-size: 2vw;
+    }
+    .ico{
+        background-size: 1.7vw;
+        width: 1.7vw;
+        height: 1.7vw;
+    }
+    .container{
+        max-width: 50%;
+    }
+    .picture{
+        max-width: 40vw;
+    }
+}
+
+@media (hover: hover) {
+    .container:hover .ico{
+        opacity: 1;
+        transition: 0.7s ease-out;
+        background-image: url(./assets/icons/plus-svgrepo-com_unselected.svg);
+    }
+    .container:hover .option{
+        color:rgb(102, 3, 216);
+        transition: 0.7s ease-out;
+    }    
+
+    input:hover ~ .option>*,
+    input:checked ~ .option>*{
+        color:#ffffff;
+        transition: 0.5s ease-out;
+    }
+    .option,
+    .picture{
+        cursor: pointer;
+    }
+ 
+    input:hover ~ .picture,
+    input:checked ~ .picture{
+        width: 25rem;
+        transition: 0.7s ease-out;
+    }
+    input:hover ~ .option>.ico,
+    input:checked ~ .option>.ico{
+        rotate: 135deg;
+        background-image: url(./assets/icons/plus-svgrepo-com.svg);
+    }
+}
+@media (hover: none){
+    .ico{
+        opacity: 0;
+    }
+
+    input:checked ~ .picture{
+        width: 25rem;
+        transition: 0.7s ease-out;
+    }   
+    input:checked ~ .option{
+        color:rgb(102, 3, 216);
+        transition: 0.6s ease-out;
+    }
+}
+
