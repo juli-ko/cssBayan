@@ -139,6 +139,7 @@ input{
     }
     .container:hover .option{
         color:rgb(102, 3, 216);
+        transition: 0.7s ease-out;
     }    
 
     input:hover ~ .option>*,
